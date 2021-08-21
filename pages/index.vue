@@ -1,43 +1,38 @@
 <template>
-  <v-row>
-    <v-col cols="2" class="hidden-sm-and-down"></v-col>
-    <v-col cols="8" sm="12">
       <div class="pt-10 mt-10 block-center">
         <h1 class="titletext">Ryusei's Portfolio</h1>
         <h2 class="text">Welcom to my portfolio site</h2>
+        <canvas class="background"></canvas>
       </div>
-    </v-col>
-    <v-col cols="2" class="hidden-sm-and-down"></v-col>
-    <canvas class="background"></canvas>
-  </v-row>
+
+    
 </template>
 
 <script>
+import "~/plugins/particles.js";
 export default {
-  head: {
-    script: [
-      {
-        src:
-          "https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"
-      }
-    ],
-    link: [
-      {
-        rel: "stylesheet",
-        href:
-          "https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap"
-      }
-    ]
+  head: {},
+  data() {
+    return {
+      particles: null
+    };
+  },
+  mounted() {
+    this.init();
+  },
+  beforeDestroy() {
+    if (this.particles) this.particles.destroy();
   },
 
   methods: {
-    window: (onload = function() {
-      Particles.init({
+    init() {
+      this.particles = this.$particles.init({
         selector: ".background",
         sizeVariations: 30,
         color: ["#0bd", "rgba(0,187,221,.5)", "rgba(0,187,221,.2)"]
       });
-    })
+      console.log(this.particles);
+    }
   }
 };
 </script>
@@ -46,13 +41,13 @@ export default {
 .titletext {
   text-align: center;
   color: black;
-  font-size: 120px;
+  font-size: 20vmin;
   font-family: "Tangerine", cursive;
 }
 .text {
   text-align: center;
   color: black;
-  font-size: 30px;
+  font-size: 5vmin;
 }
 .background {
   position: absolute;

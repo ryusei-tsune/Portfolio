@@ -21,6 +21,7 @@ export default {
     return {
       isOpenDrawer: false,
       menuItem: [
+        { title: "Top", to: "/" },
         { title: "About", to: "/about" },
         { title: "Career", to: "/career" },
         { title: "Works", to: "/works" }

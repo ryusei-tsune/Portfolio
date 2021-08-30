@@ -1,5 +1,11 @@
 <template>
-  <v-navigation-drawer app right :value="value" @input="change" disable-resize-watcher>
+  <v-navigation-drawer
+    app
+    right
+    :value="value"
+    @input="change"
+    disable-resize-watcher
+  >
     <v-list-item>
       <v-list-item-content>
         <v-list-item-title class="drawer-menu">
@@ -9,9 +15,17 @@
     </v-list-item>
     <v-divider></v-divider>
     <v-list>
-      <v-list-item v-for="(item, index) in items" :key="index" link exact :to="item.to">
+      <v-list-item
+        v-for="(item, index) in items"
+        :key="index"
+        link
+        exact
+        :to="item.to"
+      >
         <v-list-item-content>
-          <v-list-item-title class="drawer-menu">{{ item.title }}</v-list-item-title>
+          <v-list-item-title class="drawer-menu">{{
+            item.title
+          }}</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
     </v-list>
@@ -36,9 +50,9 @@ export default {
     return {};
   },
   watch: {
-    '$vuetify.breakpoint.xsOnly':{
-      handler(v){
-        if(!v) this.change(false)
+    "$vuetify.breakpoint.xsOnly": {
+      handler(v) {
+        if (!v) this.change(false);
       }
     }
   },

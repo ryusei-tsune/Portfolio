@@ -10,9 +10,13 @@
     >
       {{ item.title }}
     </nuxt-link>
-    <v-btn color="light-blue lighten-2" class="d-sm-none" outlined @click="changeMenuStatus()">
-      MENU
-      <!-- <v-icon>mdi-menu</v-icon> -->
+    <v-btn
+      color="light-blue lighten-2"
+      class="d-sm-none"
+      outlined
+      @click="changeMenuStatus()"
+    >
+      <v-icon>mdi-menu</v-icon>
     </v-btn>
   </v-app-bar>
 </template>
@@ -40,8 +44,8 @@ export default {
   mounted() {},
   beforeDestroy() {},
   methods: {
-    changeMenuStatus(){
-      this.$emit('toggle-drawer')
+    changeMenuStatus() {
+      this.$emit("toggle-drawer");
     }
   }
 };

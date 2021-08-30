@@ -1,11 +1,9 @@
 <template>
-      <div class="pt-10 mt-10 block-center">
-        <h1 class="titletext">Ryusei's Portfolio</h1>
-        <h2 class="text">Welcom to my portfolio site</h2>
-        <canvas class="background"></canvas>
-      </div>
-
-    
+  <div class="pt-10 mt-10 block-center">
+    <h1 class="titletext">Ryusei's Portfolio</h1>
+    <h2 class="text">Welcom to my portfolio site</h2>
+    <canvas class="background"></canvas>
+  </div>
 </template>
 
 <script>

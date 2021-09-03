@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar flat app color="light-blue lighten-5" :height="height">
+  <v-app-bar app class="shadow" color="light-blue lighten-5" :height="height">
     <nuxt-link class="button bar-title" to="/">Portfolio</nuxt-link>
     <v-spacer></v-spacer>
     <nuxt-link
@@ -36,7 +36,22 @@ export default {
   watch: {},
   computed: {
     height() {
-      return this.$vuetify.breakpoint.xsOnly ? undefined : 80;
+      if (this.$vuetify.breakpoint.xsOnly) {
+        return undefined;
+      }
+      if (this.$vuetify.breakpoint.smOnly) {
+        return  80;
+      }
+      if (this.$vuetify.breakpoint.mdOnly) {
+        return 90;
+      }
+      if (this.$vuetify.breakpoint.lgOnly) {
+        return 120;
+      }
+      if (this.$vuetify.breakpoint.xlOnly) {
+        return 200;
+      }
+      //return this.$vuetify.breakpoint.xsOnly ? undefined : 100;
     }
   },
   created() {},
@@ -57,13 +72,17 @@ export default {
   font-family: "Tangerine", cursive;
 }
 .bar-title {
-  font-size: 9vmin;
+  font-size: 10vmin;
 }
 /* .bar-title {
   font-size: 60px;
 } */
 .bar-menu {
-  font-size: 30px;
+  font-size: 5vmin;
   margin-top: 6px;
 }
+.shadow {
+  box-shadow: 0 0 5px #aaaaaa !important;
+}
 </style>
+

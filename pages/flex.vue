@@ -1,14 +1,14 @@
 <template>
   <v-container>
     <div class="d-flex cover">
-      <div class="child blue">長い長い長い長い長い長い</div>
+      <div class="blue">長い長い長い長い長い長い</div>
       <div class="child red">2</div>
       <div class="child green">3</div>
       <div class="child yellow">4</div>
       <div class="child purple">5</div>
     </div>
     <div class="cover">
-      <div class="child blue">長い長い長い長い長い長い</div>
+      <div class=" blue">長い長い長い長い長い長い</div>
       <div class="child red">2</div>
       <div class="child green">3</div>
       <div class="child yellow">4</div>
@@ -21,7 +21,7 @@
   display: inline-block;
 }
 .cover {
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 /* 

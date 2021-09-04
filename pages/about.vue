@@ -18,9 +18,9 @@
               </v-tab>
             </v-tabs>
             <v-tabs-items v-model="tab">
-              <v-tab-item v-for="item in items" :key="item">
+              <v-tab-item v-for="item in text" :key="item">
                 <v-card flat>
-                  <v-card-text v-text="text"></v-card-text>
+                  <v-card-text>{{item}}</v-card-text>
                 </v-card>
               </v-tab-item>
             </v-tabs-items>
@@ -46,8 +46,9 @@ export default {
       imsrcs: ["/childhood.jpg", "/adolescence.jpg", "/index.jpg"],
       tab: null,
       items: ["幼少期", "青年期", "成人期"],
-      text:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      text: [
+        "兵庫県たつの市で生まれる", "ソフトテニスを9年間続けた", "大学から硬式テニスを始める"
+      ]
     };
   },
   watch: {},
@@ -63,7 +64,7 @@ export default {
 .body-for-color .v-main__wrap {
   background-color: #e8f0f3;
 }
-.resizeimage{ 
-  width: 100%; 
-  }
+.resizeimage {
+  width: 100%;
+}
 </style>

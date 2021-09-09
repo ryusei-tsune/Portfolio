@@ -23,7 +23,7 @@ export default {
       menuItem: [
         { title: "Top", to: "/" },
         { title: "About", to: "/about" },
-        { title: "Career", to: "/career" },
+        { title: "Hobby", to: "/hobby" },
         { title: "Works", to: "/works" }
       ]
     };

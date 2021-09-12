@@ -10,12 +10,15 @@
       <v-dialog v-model="dialog" width="800">
         <template v-slot:activator="{ on, attrs }">
           <v-row justify="center">
-            <v-col cols="12" md="4" lg="3" class="text-center" v-for="(item, index) in Names" :key="index">
-              <v-card
-                v-bind="attrs"
-                v-on="on"
-                @click="openPop(index)"
-              >
+            <v-col
+              cols="12"
+              md="4"
+              lg="3"
+              class="text-center"
+              v-for="(item, index) in Names"
+              :key="index"
+            >
+              <v-card v-bind="attrs" v-on="on" @click="openPop(index)">
                 <v-card-text>
                   {{ item }}
                 </v-card-text>
@@ -31,12 +34,16 @@
 
           <v-card flat tile color="grey">
             <v-window v-model="onboarding">
-              <v-window-item v-for="n in length" :key="`card-${n}`">
-                <v-card color="grey">
+              <v-window-item
+                v-for="(content, index) in Contents[select]"
+                :key="index"
+              >
+                <img class="resizeimage" :src="image[select][index]" />
+                <v-card>
                   <v-row class="fill-height" align="center" justify="center">
-                    <h1 style="font-size: 5rem;" class="white--text">
-                      Slide {{ n }}
-                    </h1>
+                    <v-card-text>
+                      {{ content }}
+                    </v-card-text>
                   </v-row>
                 </v-card>
               </v-window-item>
@@ -83,7 +90,17 @@ export default {
       Names: ["CCF(Create CSV File)", "Household-Account-Book", "Portfolio"],
       length: 3,
       onboarding: 0,
-      select: 0
+      select: 0,
+      Contents: [
+        ["aaaaaaaaaaaaa", "bbbbbbbbbbbb", "ccccccccccc"],
+        ["ddddddddddd", "eeeeeeeeeeee", "fffffffffff"],
+        ["ggggggggggg", "hhhhhhhhhhhhh", "iiiiiiiiiiii"]
+      ],
+      image: [
+        ["/CCF1.jpg", "/CCF2.jpg", "/CCF3.jpg"],
+        ["/CCF1.jpg", "/CCF2.jpg", "/CCF3.jpg"],
+        ["Portfolio1.jpg", "Portfolio2.jpg", "Portfolio3.jpg"]
+      ]
     };
   },
   watch: {},
@@ -107,3 +124,8 @@ export default {
   }
 };
 </script>
+<style scoped>
+.resizeimage {
+  width: 100%;
+}
+</style>

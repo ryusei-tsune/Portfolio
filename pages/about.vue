@@ -64,6 +64,8 @@ export default {
 .body-for-color .v-main__wrap {
   background-color: #e8f0f3;
 }
+</style>
+<style scoped>
 .resizeimage {
   width: 100%;
 }

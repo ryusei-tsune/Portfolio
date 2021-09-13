@@ -39,6 +39,7 @@
                 :key="index"
               >
                 <img class="resizeimage" :src="image[select][index]" />
+                <v-divider></v-divider>
                 <v-card>
                   <v-row class="fill-height" align="center" justify="center">
                     <v-card-text>
@@ -87,7 +88,7 @@ export default {
   data() {
     return {
       dialog: false,
-      Names: ["CCF(Create CSV File)", "Household-Account-Book", "Portfolio"],
+      Names: ["CCF(Create csv File)", "Household-Account-Book", "Portfolio"],
       length: 3,
       onboarding: 0,
       select: 0,
@@ -112,6 +113,7 @@ export default {
   methods: {
     openPop(index) {
       this.select = index;
+      this.onboarding = 0;
     },
     next() {
       this.onboarding =

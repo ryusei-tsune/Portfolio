@@ -28,27 +28,30 @@
         </template>
 
         <v-card>
-          <v-card-title class="text-h5 grey lighten-2">
+          <v-card-title class="text-h5 popColor">
             {{ Names[select] }}
           </v-card-title>
 
-          <v-card flat tile color="grey">
+          <v-card flat tile color="#F5F5F5">
             <v-window v-model="onboarding">
               <v-window-item
                 v-for="(content, index) in Contents[select]"
                 :key="index"
               >
-                <img class="resizeimage" :src="image[select][index]" />
+                <img class="resizeimage pt-2 pb-3 popBack" :src="image[select][index]" />
                 <v-divider></v-divider>
                 <v-card>
                   <v-row class="fill-height" align="center" justify="center">
-                    <v-card-text>
+                    <v-card-text class="mb-2">
                       {{ content }}
                     </v-card-text>
                   </v-row>
                 </v-card>
               </v-window-item>
             </v-window>
+
+            <v-divider></v-divider>
+
             <v-card-actions class="justify-space-between">
               <v-btn text @click="prev">
                 <v-icon>mdi-chevron-left</v-icon>
@@ -70,14 +73,14 @@
             </v-card-actions>
           </v-card>
 
-          <v-divider></v-divider>
+          <!-- <v-divider></v-divider>
 
           <v-card-actions>
             <v-spacer></v-spacer>
             <v-btn color="primary" text @click="dialog = false">
               I accept
             </v-btn>
-          </v-card-actions>
+          </v-card-actions> -->
         </v-card>
       </v-dialog>
     </div>
@@ -129,5 +132,8 @@ export default {
 <style scoped>
 .resizeimage {
   width: 100%;
+}
+.popColor {
+  background-color: #B3E5FC;
 }
 </style>

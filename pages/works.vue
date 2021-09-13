@@ -38,8 +38,10 @@
                 v-for="(content, index) in Contents[select]"
                 :key="index"
               >
-                <img class="resizeimage pt-2 pb-3 popBack" :src="image[select][index]" />
-                <v-divider></v-divider>
+                <img
+                  class="resizeimage pt-2 pb-4 popBack"
+                  :src="image[select][index]"
+                />
                 <v-card>
                   <v-row class="fill-height" align="center" justify="center">
                     <v-card-text class="mb-2">
@@ -134,6 +136,6 @@ export default {
   width: 100%;
 }
 .popColor {
-  background-color: #B3E5FC;
+  background-color: #b3e5fc;
 }
 </style>

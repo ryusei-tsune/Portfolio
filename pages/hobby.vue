@@ -1,6 +1,6 @@
 <template>
   <v-container class="px-0" fluid style="max-width: 1400px">
-    <div class="ma-0">
+    <div class="ma-0 px-2">
       <v-card flat tile color="#F5F5F5">
         <v-window v-model="onboarding">
           <v-window-item

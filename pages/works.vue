@@ -9,7 +9,7 @@
         > -->
       <v-dialog v-model="dialog" width="800">
         <template v-slot:activator="{ on, attrs }">
-          <v-row justify="center">
+          <v-row justify="center" class="px-2">
             <v-col
               cols="12"
               md="4"

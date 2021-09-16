@@ -12,6 +12,7 @@
           <v-row justify="center" class="px-2">
             <v-col
               cols="12"
+              sm="6"
               md="4"
               lg="3"
               class="text-center"

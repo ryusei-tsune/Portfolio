@@ -40,9 +40,32 @@
                 :key="index"
               >
                 <img
-                  class="resizeimage pt-2 pb-4 popBack"
+                  class="resizeimage pt-2 px-2 popBack"
                   :src="image[select][index]"
                 />
+                <v-card-actions class="justify-space-between mb-3 py-2">
+                  <v-btn text @click="prev">
+                    <v-icon>mdi-chevron-left</v-icon>
+                  </v-btn>
+                  <v-item-group
+                    v-model="onboarding"
+                    class="text-center"
+                    mandatory
+                  >
+                    <v-item
+                      v-for="n in length"
+                      :key="`btn-${n}`"
+                      v-slot="{ active, toggle }"
+                    >
+                      <v-btn :input-value="active" icon @click="toggle">
+                        <v-icon>mdi-record</v-icon>
+                      </v-btn>
+                    </v-item>
+                  </v-item-group>
+                  <v-btn text @click="next">
+                    <v-icon>mdi-chevron-right</v-icon>
+                  </v-btn>
+                </v-card-actions>
                 <v-card>
                   <v-row class="fill-height" align="center" justify="center">
                     <v-card-text class="mb-2">
@@ -54,26 +77,6 @@
             </v-window>
 
             <v-divider></v-divider>
-
-            <v-card-actions class="justify-space-between">
-              <v-btn text @click="prev">
-                <v-icon>mdi-chevron-left</v-icon>
-              </v-btn>
-              <v-item-group v-model="onboarding" class="text-center" mandatory>
-                <v-item
-                  v-for="n in length"
-                  :key="`btn-${n}`"
-                  v-slot="{ active, toggle }"
-                >
-                  <v-btn :input-value="active" icon @click="toggle">
-                    <v-icon>mdi-record</v-icon>
-                  </v-btn>
-                </v-item>
-              </v-item-group>
-              <v-btn text @click="next">
-                <v-icon>mdi-chevron-right</v-icon>
-              </v-btn>
-            </v-card-actions>
           </v-card>
 
           <!-- <v-divider></v-divider>
@@ -94,12 +97,12 @@ export default {
   data() {
     return {
       dialog: false,
-      Names: ["CCF(Create csv File)", "Household-Account-Book", "Portfolio"],
+      Names: ["CCF(Create CSV File)", "Household-Account-Book", "Portfolio"],
       length: 3,
       onboarding: 0,
       select: 0,
       Contents: [
-        ["aaaaaaaaaaaaa", "bbbbbbbbbbbb", "ccccccccccc"],
+        ["aaaaaaaaaaa", "bbbbbbbbbbbb", "ccccccccccc"],
         ["ddddddddddd", "eeeeeeeeeeee", "fffffffffff"],
         ["ggggggggggg", "hhhhhhhhhhhhh", "iiiiiiiiiiii"]
       ],

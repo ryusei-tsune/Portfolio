@@ -1,5 +1,10 @@
 <template>
-  <v-app-bar app class="shadow" color="light-blue lighten-5" :height="height">
+  <v-app-bar
+    app
+    class="shadow"
+    color="light-blue lighten-5"
+    :height="$store.state.appbar.height"
+  >
     <nuxt-link class="button bar-title" to="/">Portfolio</nuxt-link>
     <v-spacer></v-spacer>
     <nuxt-link
@@ -33,24 +38,31 @@ export default {
   data() {
     return {};
   },
-  watch: {},
+  watch: {
+    "$vuetify.breakpoint.name": {
+      immediate: true,
+      handler(name) {
+        this.$store.commit("appbar/setHeight", name);
+      }
+    }
+  },
   computed: {
     height() {
-      if (this.$vuetify.breakpoint.xsOnly) {
-        return undefined;
-      }
-      if (this.$vuetify.breakpoint.smOnly) {
-        return  80;
-      }
-      if (this.$vuetify.breakpoint.mdOnly) {
-        return 90;
-      }
-      if (this.$vuetify.breakpoint.lgOnly) {
-        return 120;
-      }
-      if (this.$vuetify.breakpoint.xlOnly) {
-        return 200;
-      }
+      // if (this.$vuetify.breakpoint.xsOnly) {
+      //   return undefined;
+      // }
+      // if (this.$vuetify.breakpoint.smOnly) {
+      //   return 80;
+      // }
+      // if (this.$vuetify.breakpoint.mdOnly) {
+      //   return 90;
+      // }
+      // if (this.$vuetify.breakpoint.lgOnly) {
+      //   return 120;
+      // }
+      // if (this.$vuetify.breakpoint.xlOnly) {
+      //   return 200;
+      // }
       //return this.$vuetify.breakpoint.xsOnly ? undefined : 100;
     }
   },
@@ -85,4 +97,3 @@ export default {
   box-shadow: 0 0 5px #aaaaaa !important;
 }
 </style>
-

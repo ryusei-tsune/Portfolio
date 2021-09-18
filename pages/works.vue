@@ -1,12 +1,6 @@
 <template>
   <v-container class="px-0" fluid style="max-width: 1400px">
     <div class="ma-0">
-      <!-- <v-dialog
-          v-model="dialog"
-          width="800"
-          v-for="(item, index) in Names"
-          :key="index"
-        > -->
       <v-dialog v-model="dialog" width="800">
         <template v-slot:activator="{ on, attrs }">
           <v-row justify="center" class="px-2">
@@ -75,18 +69,7 @@
                 </v-card>
               </v-window-item>
             </v-window>
-
-            <v-divider></v-divider>
           </v-card>
-
-          <!-- <v-divider></v-divider>
-
-          <v-card-actions>
-            <v-spacer></v-spacer>
-            <v-btn color="primary" text @click="dialog = false">
-              I accept
-            </v-btn>
-          </v-card-actions> -->
         </v-card>
       </v-dialog>
     </div>
@@ -109,7 +92,7 @@ export default {
       image: [
         ["/CCF1.jpg", "/CCF2.jpg", "/CCF3.jpg"],
         ["/CCF1.jpg", "/CCF2.jpg", "/CCF3.jpg"],
-        ["Portfolio1.jpg", "Portfolio2.jpg", "Portfolio3.jpg"]
+        ["/Portfolio1.jpg", "/Portfolio2.jpg", "/Portfolio3.jpg"]
       ]
     };
   },

@@ -2,13 +2,13 @@
   <v-container class="px-0" fluid style="max-width: 1400px">
     <div class="ma-0">
       <v-row no-gutters>
-        <v-col cols="12" md="6">
+        <v-col cols="12" md="6" :class="{border:$vuetify.breakpoint.mdAndUp}">
           <v-window v-model="tab">
             <v-window-item v-for="(imsrc, index) in imsrcs" :key="index">
               <div class="backgroundImage">
                 <v-card>
                   <v-row class="fill-height" align="center" justify="center">
-                    <v-card-text class="mb-2 backcolor">
+                    <v-card-text class="mb-0 backcolor">
                       <img class="resizeimage" :src="imsrc" />
                     </v-card-text>
                   </v-row>
@@ -16,8 +16,7 @@
               </div>
             </v-window-item>
           </v-window>
-
-          <v-card-actions class="justify-space-between backcolor" >
+          <v-card-actions class="justify-space-between backcolor">
             <v-btn text @click="prev">
               <v-icon>mdi-chevron-left</v-icon>
             </v-btn>
@@ -110,5 +109,8 @@ export default {
 }
 .backcolor {
   background: white;
+}
+.border {
+  border-right:1px solid green;
 }
 </style>

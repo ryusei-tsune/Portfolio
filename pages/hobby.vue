@@ -1,41 +1,26 @@
 <template>
-  <v-container class="px-0" fluid style="max-width: 1400px">
-    <div class="ma-0 px-2">
-      <v-card flat tile color="#F5F5F5">
-        <v-window v-model="onboarding">
-          <v-window-item v-for="(hobby, index) in Hobbies" :key="index">
-            <div class="backgroundImage">
-              <v-card>
-                <v-row class="fill-height" align="center" justify="center">
-                  <v-card-text class="mb-2 backcolor">
-                    {{ hobby }}
-                  </v-card-text>
-                </v-row>
-              </v-card>
-            </div>
-          </v-window-item>
-        </v-window>
-
-        <v-card-actions class="justify-space-between">
-          <v-btn text @click="prev">
-            <v-icon>mdi-chevron-left</v-icon>
-          </v-btn>
-          <v-item-group v-model="onboarding" class="text-center" mandatory>
-            <v-item
-              v-for="n in length"
-              :key="`btn-${n}`"
-              v-slot="{ active, toggle }"
-            >
-              <v-btn :input-value="active" icon @click="toggle">
-                <v-icon>mdi-record</v-icon>
-              </v-btn>
-            </v-item>
-          </v-item-group>
-          <v-btn text @click="next">
-            <v-icon>mdi-chevron-right</v-icon>
-          </v-btn>
-        </v-card-actions>
-      </v-card>
+  <v-container class="grey lighten-2 pa-0" style="min-height:100%;" fluid>
+    <div
+      class="div-cover"
+      :style="{ height: divHeight }"
+      style="background-image: url('/adolescence.jpg');"
+    ></div>
+    <div class="div-message" :style="{ height: divHeight }">
+      <div class="div-inner-message">
+        <div style="display:inline-block;text-align:left;">
+          <div style="font-size:64px;">テニス</div>
+          <div style="font-size:32px;">
+            1歳からはじめました45歳の今でもやっています。
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="blue div-cover"
+      :style="{ height: divHeight }"
+      style="background-image: url('/childhood.jpg')"
+    >
+      bbbbbb
     </div>
   </v-container>
 </template>
@@ -51,31 +36,46 @@ export default {
   middleware: [],
   data() {
     return {
-      onboarding: false,
-      Hobbies: ["Tennis", "Programing", "Anime"],
-      length: 3
+      innerHeight: window.innerHeight
     };
   },
   watch: {},
-  computed: {},
+  computed: {
+    divHeight() {
+      return this.innerHeight - this.$store.state.appbar.height + "px";
+    }
+  },
   created() {},
   beforeMount() {},
-  mounted() {},
-  beforeDestroy() {},
+  mounted() {
+    window.addEventListener("resize", this.onResize);
+  },
+  beforeDestroy() {
+    window.removeEventListener("resize", this.onResize);
+  },
   methods: {
-    next() {
-      this.onboarding =
-        this.onboarding + 1 === this.length ? 0 : this.onboarding + 1;
-    },
-    prev() {
-      this.onboarding =
-        this.onboarding - 1 < 0 ? this.length - 1 : this.onboarding - 1;
+    onResize(e) {
+      this.innerHeight = window.innerHeight;
     }
   }
 };
 </script>
 <style scoped>
-.backcolor {
-  background-color: #f5f5f5;
+.div-cover {
+  background-size: cover;
+  filter: blur(5px);
+  width: 100%;
+  position: absolute;
+}
+.div-message {
+  position: relative;
+}
+.div-inner-message {
+  position: absolute;
+  top: 50%;
+  margin-top: -0.5em;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
 </style>

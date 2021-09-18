@@ -17,7 +17,7 @@
             </v-window-item>
           </v-window>
 
-          <v-card-actions class="justify-space-between">
+          <v-card-actions class="justify-space-between backcolor" >
             <v-btn text @click="prev">
               <v-icon>mdi-chevron-left</v-icon>
             </v-btn>
@@ -94,7 +94,7 @@ export default {
     },
     prev() {
       this.tab =
-        this.tab - 1 < 0 ? this.length - 1 : this.tab - 1;
+        this.tab - 1 < 0 ? this.imsrcs.length - 1 : this.tab - 1;
     }
   }
 };
@@ -107,5 +107,8 @@ export default {
 <style scoped>
 .resizeimage {
   width: 100%;
+}
+.backcolor {
+  background: white;
 }
 </style>

@@ -9,7 +9,7 @@
       <div class="div-inner-message">
         <div style="display:inline-block;text-align:left;">
           <div style="font-size:64px;">テニス</div>
-          <div style="font-size:32px;">
+          <div style="font-size:32px; color:magenta;">
             1歳からはじめました45歳の今でもやっています。
           </div>
         </div>

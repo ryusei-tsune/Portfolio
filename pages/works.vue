@@ -8,7 +8,7 @@
               cols="12"
               sm="6"
               md="4"
-              lg="3"
+              lg="4"
               class="text-center"
               v-for="(item, index) in Names"
               :key="index"

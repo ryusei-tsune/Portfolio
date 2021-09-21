@@ -1,5 +1,5 @@
 <template>
-  <v-container class="grey lighten-2 pa-0" style="min-height:100%;" fluid>
+  <v-container class="pa-0" style="min-height:100%;" fluid>
     <div
       class="div-cover"
       :style="{ height: divHeight }"
@@ -8,8 +8,8 @@
     <div class="div-message" :style="{ height: divHeight }">
       <div class="div-inner-message">
         <div style="display:inline-block;text-align:left;">
-          <div style="font-size:64px;">テニス</div>
-          <div style="font-size:32px; color:magenta;">
+          <div class="hobbytext">Tennis</div>
+          <div style="color: #4775ff; font-size: 3vmin;">
             1歳からはじめました45歳の今でもやっています。
           </div>
         </div>
@@ -18,9 +18,18 @@
     <div
       class="blue div-cover"
       :style="{ height: divHeight }"
-      style="background-image: url('/childhood.jpg')"
+      style="background-image: url('/index.jpg')"
     >
-      bbbbbb
+    </div>
+    <div class="div-message" :style="{ height: divHeight }">
+      <div class="div-inner-message">
+        <div style="display:inline-block;text-align:left;">
+          <div class="hobbytext">Anime</div>
+          <div style="color: #4775ff; font-size: 3vmin;">
+            お勧めはギルティクラウンです。
+          </div>
+        </div>
+      </div>
     </div>
   </v-container>
 </template>
@@ -63,7 +72,7 @@ export default {
 <style scoped>
 .div-cover {
   background-size: cover;
-  filter: blur(5px);
+  filter: blur(6px);
   width: 100%;
   position: absolute;
 }
@@ -77,5 +86,10 @@ export default {
   left: 0;
   right: 0;
   text-align: center;
+}
+.hobbytext {
+  color: deepskyblue;
+  font-size: 15vmin;
+  font-family: "Tangerine", cursive;
 }
 </style>

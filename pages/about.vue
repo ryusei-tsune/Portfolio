@@ -2,14 +2,18 @@
   <v-container class="px-0" fluid style="max-width: 1400px">
     <div class="ma-0">
       <v-row no-gutters>
-        <v-col cols="12" md="6" :class="{border:$vuetify.breakpoint.mdAndUp}">
+        <v-col
+          cols="12"
+          md="6"
+          :class="{ border: $vuetify.breakpoint.mdAndUp }"
+        >
           <v-window v-model="tab">
             <v-window-item v-for="(imsrc, index) in imsrcs" :key="index">
-              <div class="backgroundImage">
+              <div>
                 <v-card>
                   <v-row class="fill-height" align="center" justify="center">
                     <v-card-text class="mb-0 backcolor">
-                      <img class="resizeimage" :src="imsrc" />
+                      <img :src="imsrc" style="width:100%;" />
                     </v-card-text>
                   </v-row>
                 </v-card>
@@ -47,7 +51,13 @@
             <v-tabs-items v-model="tab">
               <v-tab-item v-for="item in text" :key="item">
                 <v-card flat>
-                  <v-card-text>{{ item }}</v-card-text>
+                  <v-timeline dense reverse>
+                    <v-timeline-item left>
+                      <v-card-text>{{ item }}</v-card-text>
+                    </v-timeline-item>
+                    <v-timeline-item></v-timeline-item>
+                    <v-timeline-item></v-timeline-item>
+                  </v-timeline>
                 </v-card>
               </v-tab-item>
             </v-tabs-items>
@@ -88,12 +98,10 @@ export default {
   beforeDestroy() {},
   methods: {
     next() {
-      this.tab =
-        this.tab + 1 === this.imsrcs.length ? 0 : this.tab + 1;
+      this.tab = this.tab + 1 === this.imsrcs.length ? 0 : this.tab + 1;
     },
     prev() {
-      this.tab =
-        this.tab - 1 < 0 ? this.imsrcs.length - 1 : this.tab - 1;
+      this.tab = this.tab - 1 < 0 ? this.imsrcs.length - 1 : this.tab - 1;
     }
   }
 };
@@ -104,13 +112,10 @@ export default {
 }
 </style>
 <style scoped>
-.resizeimage {
-  width: 100%;
-}
 .backcolor {
   background: white;
 }
 .border {
-  border-right:1px solid green;
+  border-right: 1px solid green;
 }
 </style>

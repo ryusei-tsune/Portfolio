@@ -8,15 +8,16 @@
     <div class="div-message" :style="{ height: divHeight }">
       <div class="div-inner-message">
         <div style="display:inline-block;text-align:left;">
-          <div class="hobbytext">Tennis</div>
-          <div style="color: #4775ff; font-size: 3vmin;">
-            1歳からはじめました45歳の今でもやっています。
+          <div class="hobbytext px-2">Tennis</div>
+          <div style="color:blueviolet; font-size: 3vmin;" class="px-4">
+            I try to play tennis at least once a week. However, due to the Coronavirus, <br>
+            I have not been able to play tennis lately, and I feel that I am not getting enough exercise.
           </div>
         </div>
       </div>
     </div>
     <div
-      class="blue div-cover"
+      class="div-cover"
       :style="{ height: divHeight }"
       style="background-image: url('/index.jpg')"
     >
@@ -24,9 +25,11 @@
     <div class="div-message" :style="{ height: divHeight }">
       <div class="div-inner-message">
         <div style="display:inline-block;text-align:left;">
-          <div class="hobbytext">Anime</div>
-          <div style="color: #4775ff; font-size: 3vmin;">
-            お勧めはギルティクラウンです。
+          <div class="hobbytext px-2">Anime</div>
+          <div style="color:darkturquoise; font-size: 3vmin;" class="px-4">
+            I've loved anime since I was in elementary school. The first time I got into anime was Fairy Tail. <br>
+            Currently, the anime I recommend is Guilty Crown. <br>
+            I can't tell you what to look out for or how I feel about it, so please watch it.<br>
           </div>
         </div>
       </div>
@@ -70,7 +73,7 @@ export default {
 };
 </script>
 <style scoped>
-.div-cover {
+.div-cover{
   background-size: cover;
   filter: blur(6px);
   width: 100%;

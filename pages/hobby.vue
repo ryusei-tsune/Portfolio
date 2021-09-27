@@ -3,13 +3,13 @@
     <div
       class="div-cover"
       :style="{ height: divHeight }"
-      style="background-image: url('/adolescence.jpg');"
+      style="background-image: url('/hobby-Tennis.jpg');"
     ></div>
     <div class="div-message" :style="{ height: divHeight }">
       <div class="div-inner-message">
         <div style="display:inline-block;text-align:left;">
           <div class="hobbytext px-2">Tennis</div>
-          <div style="color:blueviolet; font-size: 3vmin;" class="px-4">
+          <div style="color:slateblue; font-size: 3vmin;" class="px-4">
             I try to play tennis at least once a week. However, due to the Coronavirus, <br>
             I have not been able to play tennis lately, and I feel that I am not getting enough exercise.
           </div>
@@ -19,7 +19,7 @@
     <div
       class="div-cover"
       :style="{ height: divHeight }"
-      style="background-image: url('/index.jpg')"
+      style="background-image: url('/hobby-Anime.jpg')"
     >
     </div>
     <div class="div-message" :style="{ height: divHeight }">
@@ -91,7 +91,7 @@ export default {
   text-align: center;
 }
 .hobbytext {
-  color: deepskyblue;
+  color: magenta;
   font-size: 15vmin;
   font-family: "Tangerine", cursive;
 }

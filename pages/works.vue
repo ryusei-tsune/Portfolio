@@ -1,7 +1,7 @@
 <template>
   <v-container class="px-0" fluid style="max-width: 1400px">
     <div class="ma-0">
-      <v-dialog v-model="dialog" width="1000">
+      <v-dialog v-model="dialog" width="800">
         <template v-slot:activator="{ on, attrs }">
           <v-row justify="center" class="px-2">
             <v-col
@@ -18,7 +18,7 @@
                   <img :src="popim[index]" style="width:100%;" />
                 </div>
                 <v-divider></v-divider>
-                <v-card-text>
+                <v-card-text class="pa-2">
                   {{ item }}
                 </v-card-text>
               </v-card>
@@ -45,7 +45,7 @@
                     mandatory
                   >
                     <v-item
-                      v-for="n in length"
+                      v-for="n in image[select].length"
                       :key="`btn-${n}`"
                       v-slot="{ active, toggle }"
                     >
@@ -63,38 +63,50 @@
             <v-card>
               <!-- <v-row class="fill-height" align="center" justify="center"> -->
               <v-row>
-                <v-col cols="4" sm="3" xl="3">
-                  <v-card-text class="itemstr pr-2 text-right">
+                <v-col cols="12" md="3" lg="4" :class="{ smargin: $vuetify.breakpoint.smAndDown }">
+                  <v-card-text class="itemstr pr-2 text-left" :class="{ smargin: $vuetify.breakpoint.smAndDown }">
                     タイトル :
                   </v-card-text>
                 </v-col>
-                <v-col cols="8" sm="9" xl="9">
-                  <v-card-text class="contentstr">
+                <v-col cols="12" md="9" lg="8" :class="{ smargin: $vuetify.breakpoint.smAndDown }">
+                  <v-card-text class="contentstr" :class="{ smargin: $vuetify.breakpoint.smAndDown }">
                     {{ Names[select] }}
                   </v-card-text>
                 </v-col>
               </v-row>
               <v-row v-for="(item, index) in summery[select]" :key="index">
-                <v-col cols="4" sm="3" xl="3" class="py-0 text-right">
-                  <v-card-text v-if="index == 0" class="pb-0 itemstr pr-2">
+                <v-col cols="12" md="3" lg="4" class="py-0 text-left"  :class="{ smargin: $vuetify.breakpoint.smAndDown }">
+                  <v-card-text v-if="index == 0" class="pb-0 itemstr pr-2" :class="{ smargin: $vuetify.breakpoint.smAndDown }">
                     概要:
                   </v-card-text>
                 </v-col>
-                <v-col cols="8" sm="9" xl="9" class="py-0">
-                  <v-card-text class="pb-0 contentstr">
+                <v-col cols="12" md="9" lg="8" class="py-0" :class="{ smargin: $vuetify.breakpoint.smAndDown }">
+                  <v-card-text class="pb-0 contentstr" :class="{ smargin: $vuetify.breakpoint.smAndDown }">
                     {{ item }}
                   </v-card-text>
                 </v-col>
               </v-row>
               <v-row>
-                <v-col cols="4" sm="3" xl="3" class=" text-right">
-                  <v-card-text class="itemstr">
+                <v-col cols="12" md="3" lg="4" class=" text-left"  :class="{ smargin: $vuetify.breakpoint.smAndDown }">
+                  <v-card-text class="itemstr" :class="{ smargin: $vuetify.breakpoint.smAndDown }">
                     使用言語:
                   </v-card-text>
                 </v-col>
-                <v-col cols="8" sm="9" xl="9">
-                  <v-card-text class="contentstr">
+                <v-col cols="12" md="9" lg="8" :class="{ smargin: $vuetify.breakpoint.smAndDown }">
+                  <v-card-text class="contentstr" :class="{ smargin: $vuetify.breakpoint.smAndDown }">
                     {{ usedLanguage[select] }}
+                  </v-card-text>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="12" md="3" lg="4" class=" text-left" :class="{ smargin: $vuetify.breakpoint.smAndDown }">
+                  <v-card-text class="itemstr" :class="{ smargin: $vuetify.breakpoint.smAndDown }">
+                    URL:
+                  </v-card-text>
+                </v-col>
+                <v-col cols="12" md="9" lg="8" :class="{ smargin: $vuetify.breakpoint.smAndDown }">
+                  <v-card-text class="contentstr" :class="{ smargin: $vuetify.breakpoint.smAndDown }">
+                    <a :href="url[select]" target="_blank" rel="noopener noreferrer">{{ url[select] }}</a>
                   </v-card-text>
                 </v-col>
               </v-row>
@@ -141,12 +153,13 @@ export default {
         "HTML, CSS, JavaScript, Vue.js, Node.js",
         "HTML, CSS, JavaScript, Vue.js, Node.js"
       ],
+      url:["https://ccf-gotohlab.herokuapp.com/", "https://household-account-book.glitch.me/", ""],
       image: [
-        ["/CCF-home.png", "/import.png", "/export.png"],
-        ["/CCF-home.png", "/import.png", "/export.png"],
-        ["/Portfolio1.jpg", "/Portfolio2.jpg", "/Portfolio3.jpg"]
+        ["/CCF-home.png", "/CCF-import.png", "/CCF-export.png"],
+        ["/h-login.png", "/h-create.png", "/h-input.png", "/h-history.png"],
+        ["/Portfolio-index.png", "/Portfolio-about.png", "/Portfolio-hobby.png", "/Portfolio-work.png", "/Portfolio-work-detail.png"]
       ],
-      popim: ["/CCF-home.png", "/CCF-home.png", "/Portfolio1.jpg"]
+      popim: ["/CCF-home.png", "/h-history.png", "/Portfolio-index.png"]
     };
   },
   watch: {},
@@ -162,11 +175,11 @@ export default {
     },
     next() {
       this.onboarding =
-        this.onboarding + 1 === this.length ? 0 : this.onboarding + 1;
+        this.onboarding + 1 === this.image[this.select].length ? 0 : this.onboarding + 1;
     },
     prev() {
       this.onboarding =
-        this.onboarding - 1 < 0 ? this.length - 1 : this.onboarding - 1;
+        this.onboarding - 1 < 0 ? this.image[this.select].length - 1 : this.onboarding - 1;
     }
   }
 };
@@ -183,5 +196,9 @@ export default {
 }
 .contentstr {
   font-size: 2vmin;
+}
+.smargin {
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 </style>

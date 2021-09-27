@@ -49,14 +49,12 @@
               </v-tab>
             </v-tabs>
             <v-tabs-items v-model="tab">
-              <v-tab-item v-for="item in text" :key="item">
+              <v-tab-item v-for="(text, i) in texts" :key="i">
                 <v-card flat>
-                  <v-timeline dense reverse>
-                    <v-timeline-item left>
-                      <v-card-text>{{ item }}</v-card-text>
+                  <v-timeline dense reverse v-for="t in text" :key="t">
+                    <v-timeline-item left class="pb-2">
+                      <v-card-text>{{ t }}</v-card-text>
                     </v-timeline-item>
-                    <v-timeline-item></v-timeline-item>
-                    <v-timeline-item></v-timeline-item>
                   </v-timeline>
                 </v-card>
               </v-tab-item>
@@ -82,11 +80,23 @@ export default {
     return {
       imsrcs: ["/childhood.jpg", "/adolescence.jpg", "/index.jpg"],
       tab: null,
-      items: ["幼少期", "青年期", "成人期"],
-      text: [
-        "兵庫県たつの市で生まれる",
-        "ソフトテニスを9年間続けた",
-        "大学から硬式テニスを始める"
+      items: ["0~9歳", "10~19歳", "20歳~"],
+      texts: [
+        [
+          "1998年12月26日兵庫県で誕生",
+          "歳の離れた姉兄にあまやかされながら元気に成長",
+          "真冬でも半袖で過ごす元気っ子"
+        ],
+        [
+          "兄の影響でソフトテニスを始める",
+          "高校卒業までの9年間ソフトテニスに懸ける日々",
+          "小学6年生、中学3年生の時に県大会ベスト16に進出（残念ながら近畿大会への切符は掴めず...）"
+        ],
+        [
+          "プログラミングを本格的に勉強開始(現在もまだまだ勉強中)",
+          "心機一転、大学から硬式テニスを始める(新たな挑戦)",
+          "ソフトテニスとの差に苦しみつつも3年間続けることで、8つのサークル間で開かれる大会でベスト8進出(頑張った！次は目指せベスト4！！)"
+        ]
       ]
     };
   },

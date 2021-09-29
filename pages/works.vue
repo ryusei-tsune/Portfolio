@@ -61,10 +61,9 @@
               </v-window-item>
             </v-window>
             <v-card>
-              <!-- <v-row class="fill-height" align="center" justify="center"> -->
               <v-row>
-                <v-col cols="12" md="3" lg="4" :class="{ smargin: $vuetify.breakpoint.smAndDown }">
-                  <v-card-text class="itemstr pr-2 text-left" :class="{ smargin: $vuetify.breakpoint.smAndDown }">
+                <v-col cols="12" md="3" lg="4" class="title" :class="{ titlemargin: $vuetify.breakpoint.smAndDown }">
+                  <v-card-text class="itemstr" :class="{ smargin: $vuetify.breakpoint.smAndDown }">
                     タイトル :
                   </v-card-text>
                 </v-col>
@@ -75,7 +74,7 @@
                 </v-col>
               </v-row>
               <v-row v-for="(item, index) in summery[select]" :key="index">
-                <v-col cols="12" md="3" lg="4" class="py-0 text-left"  :class="{ smargin: $vuetify.breakpoint.smAndDown }">
+                <v-col cols="12" md="3" lg="4" class="py-0 title"  :class="{ titlemargin: $vuetify.breakpoint.smAndDown }">
                   <v-card-text v-if="index == 0" class="pb-0 itemstr pr-2" :class="{ smargin: $vuetify.breakpoint.smAndDown }">
                     概要:
                   </v-card-text>
@@ -87,7 +86,7 @@
                 </v-col>
               </v-row>
               <v-row>
-                <v-col cols="12" md="3" lg="4" class=" text-left"  :class="{ smargin: $vuetify.breakpoint.smAndDown }">
+                <v-col cols="12" md="3" lg="4" class=" title"  :class="{ titlemargin: $vuetify.breakpoint.smAndDown }">
                   <v-card-text class="itemstr" :class="{ smargin: $vuetify.breakpoint.smAndDown }">
                     使用言語:
                   </v-card-text>
@@ -99,7 +98,7 @@
                 </v-col>
               </v-row>
               <v-row>
-                <v-col cols="12" md="3" lg="4" class=" text-left" :class="{ smargin: $vuetify.breakpoint.smAndDown }">
+                <v-col cols="12" md="3" lg="4" class="title" :class="{ titlemargin: $vuetify.breakpoint.smAndDown }">
                   <v-card-text class="itemstr" :class="{ smargin: $vuetify.breakpoint.smAndDown }">
                     URL:
                   </v-card-text>
@@ -110,7 +109,6 @@
                   </v-card-text>
                 </v-col>
               </v-row>
-              <!-- </v-row> -->
             </v-card>
           </v-card>
         </v-card>
@@ -157,7 +155,7 @@ export default {
       image: [
         ["/CCF-home.png", "/CCF-import.png", "/CCF-export.png"],
         ["/h-login.png", "/h-create.png", "/h-input.png", "/h-history.png"],
-        ["/Portfolio-index.png", "/Portfolio-about.png", "/Portfolio-hobby.png", "/Portfolio-work.png", "/Portfolio-work-detail.png"]
+        ["/Portfolio-index.png", "/Portfolio-about.png", "/Portfolio-hobby.png", "/Portfolio-work.png"]
       ],
       popim: ["/CCF-home.png", "/h-history.png", "/Portfolio-index.png"]
     };
@@ -196,6 +194,14 @@ export default {
 }
 .contentstr {
   font-size: 2vmin;
+}
+.title {
+  text-align: right;
+}
+.titlemargin {
+  text-align: left;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 .smargin {
   padding-top: 0px;

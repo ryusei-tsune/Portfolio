@@ -51,9 +51,11 @@
             <v-tabs-items v-model="tab">
               <v-tab-item v-for="(text, i) in texts" :key="i">
                 <v-card flat>
-                  <v-timeline dense reverse v-for="t in text" :key="t">
+                  <v-timeline dense reverse v-for="(t, j) in text" :key="j">
                     <v-timeline-item left class="pb-2">
-                      <v-card-text>{{ t }}</v-card-text>
+                      <v-card class="ml-2"  @click="openModal()">
+                        <v-card-text class="text">{{ t }}</v-card-text>
+                      </v-card>
                     </v-timeline-item>
                   </v-timeline>
                 </v-card>
@@ -62,10 +64,12 @@
           </v-card>
         </v-col>
       </v-row>
+      <Modal v-show="showcontent" @close="closeModal"></Modal>
     </div>
   </v-container>
 </template>
 <script>
+import Modal from "~/components/modal.vue";
 export default {
   head() {
     return {
@@ -74,12 +78,12 @@ export default {
     };
   },
   layout: "default",
-  components: {},
+  components: { Modal },
   middleware: [],
   data() {
     return {
       imsrcs: ["/childhood.jpg", "/adolescence.jpg", "/index.jpg"],
-      tab: null,
+      tab: 0,
       items: ["0~9歳", "10~19歳", "20歳~"],
       texts: [
         [
@@ -97,7 +101,9 @@ export default {
           "心機一転、大学から硬式テニスを始める(新たな挑戦)",
           "ソフトテニスとの差に苦しみつつも3年間続けることで、8つのサークル間で開かれる大会でベスト8進出(頑張った！次は目指せベスト4！！)"
         ]
-      ]
+      ],
+      showcontent: false,
+      pos: 0
     };
   },
   watch: {},
@@ -112,6 +118,12 @@ export default {
     },
     prev() {
       this.tab = this.tab - 1 < 0 ? this.imsrcs.length - 1 : this.tab - 1;
+    },
+    openModal() {
+      this.showcontent = true;
+    },
+    closeModal() {
+      this.showcontent = false;
     }
   }
 };
@@ -126,6 +138,9 @@ export default {
   background: white;
 }
 .border {
-  border-right: 1px solid green;
+  border-right: 1px solid rgb(105, 105, 105);
+}
+.text {
+  font-size: 2vmin;
 }
 </style>

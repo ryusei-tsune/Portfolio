@@ -53,7 +53,7 @@
                 <v-card flat>
                   <v-timeline dense reverse v-for="(t, j) in text" :key="j">
                     <v-timeline-item left class="pb-2">
-                      <v-card class="ml-2"  @click="openModal()">
+                      <v-card class="ml-2"  @click="openModal(j)">
                         <v-card-text class="text">{{ t }}</v-card-text>
                       </v-card>
                     </v-timeline-item>
@@ -64,7 +64,7 @@
           </v-card>
         </v-col>
       </v-row>
-      <Modal v-show="showcontent" @close="closeModal"></Modal>
+      <Modal :tab="tab" :index="pos" v-show="showcontent" @close="closeModal"></Modal>
     </div>
   </v-container>
 </template>
@@ -119,8 +119,9 @@ export default {
     prev() {
       this.tab = this.tab - 1 < 0 ? this.imsrcs.length - 1 : this.tab - 1;
     },
-    openModal() {
+    openModal(index) {
       this.showcontent = true;
+      this.pos = index
     },
     closeModal() {
       this.showcontent = false;

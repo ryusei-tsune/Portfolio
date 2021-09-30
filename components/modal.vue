@@ -1,8 +1,13 @@
 <template>
   <div id="overlay" @click="close()">
     <div id="content">
-      <v-card-text>これがモーダルウィンドウです</v-card-text>
-      <v-btn @click="close()">close</v-btn>
+      <v-card>
+        <img
+          class="pt-2 px-2 popBack"
+          style="width: 100%;"
+          :src="imagesrc[tab][index]"
+        />
+      </v-card>
     </div>
   </div>
 </template>
@@ -10,9 +15,24 @@
 export default {
   components: {},
   middleware: [],
-  props: {},
+  props: {
+    tab: {
+      type: Number,
+      required: true
+    },
+    index: {
+      type: Number,
+      required: true
+    }
+  },
   data() {
-    return {};
+    return {
+      imagesrc: [
+        ["no-image.jpg", "no-image.jpg", "no-image.jpg"],
+        ["no-image.jpg", "no-image.jpg", "no-image.jpg"],
+        ["no-image.jpg", "no-image.jpg", "no-image.jpg"]
+      ]
+    };
   },
   watch: {},
   computed: {},
@@ -45,5 +65,6 @@ export default {
   width: 50%;
   padding: 1em;
   background: #fff;
+  justify-content: center;
 }
 </style>

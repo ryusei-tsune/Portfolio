@@ -49,7 +49,7 @@ export default {
 </script>
 <style scoped>
 #overlay {
-  z-index: 1;
+  z-index: 1000;
   position: fixed;
   top: 0;
   left: 0;
@@ -61,7 +61,7 @@ export default {
   justify-content: center;
 }
 #content {
-  z-index: 2;
+  z-index: 1001;
   width: 50%;
   padding: 1em;
   background: #fff;

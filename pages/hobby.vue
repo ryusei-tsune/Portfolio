@@ -9,7 +9,7 @@
       <div class="div-inner-message">
         <div style="display:inline-block;text-align:left;">
           <div class="hobbytext px-2">Tennis</div>
-          <div style="color:slateblue; font-size: 3vmin;" class="px-4">
+          <div style="color:slateblue; font-size: 3vmin; text-shadow:0px 0px 4px white;" class="px-4">
             I try to play tennis at least once a week. However, due to the Coronavirus, <br>
             I have not been able to play tennis lately, and I feel that I am not getting enough exercise.
           </div>

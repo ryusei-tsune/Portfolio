@@ -8,15 +8,17 @@
     <v-main>
       <Nuxt />
     </v-main>
+    <PageFooter></PageFooter>
   </v-app>
 </template>
 
 <script>
 import AppBar from "~/components/layout/AppBar.vue";
 import NavigationDrawer from "~/components/layout/NavigationDrawer.vue";
+import PageFooter from "~/components/layout/PageFooter.vue";
 export default {
   head: {},
-  components: { AppBar, NavigationDrawer },
+  components: { AppBar, NavigationDrawer, PageFooter },
   data() {
     return {
       isOpenDrawer: false,

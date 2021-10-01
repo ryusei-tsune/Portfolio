@@ -1,6 +1,7 @@
 <template>
-  <v-footer padless>
-    <v-col class="text-center" cols="12">
+  <v-footer color="primary lighten-1" padless>
+    <v-col class="text-right" cols="12">
+      <v-icon>mdi-copyright</v-icon> 2021 Ryusei inc.
       {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
     </v-col>
   </v-footer>
@@ -9,19 +10,7 @@
 export default {
   components: {},
   middleware: [],
-  props: {
-    prop1: {
-      type: Number,
-      required: false,
-      default: 100
-    },
-    prop2: {
-      type: Object,
-      default() {
-        return {};
-      }
-    }
-  },
+  props: {},
   data() {
     return {};
   },

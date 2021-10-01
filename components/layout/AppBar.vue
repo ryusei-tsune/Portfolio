@@ -46,26 +46,7 @@ export default {
       }
     }
   },
-  computed: {
-    height() {
-      // if (this.$vuetify.breakpoint.xsOnly) {
-      //   return undefined;
-      // }
-      // if (this.$vuetify.breakpoint.smOnly) {
-      //   return 80;
-      // }
-      // if (this.$vuetify.breakpoint.mdOnly) {
-      //   return 90;
-      // }
-      // if (this.$vuetify.breakpoint.lgOnly) {
-      //   return 120;
-      // }
-      // if (this.$vuetify.breakpoint.xlOnly) {
-      //   return 200;
-      // }
-      //return this.$vuetify.breakpoint.xsOnly ? undefined : 100;
-    }
-  },
+  computed: {},
   created() {},
   beforeMount() {},
   mounted() {},

@@ -49,9 +49,12 @@
               </v-tab>
             </v-tabs>
             <v-tabs-items v-model="tab">
-              <v-tab-item v-for="(text, i) in texts" :key="i">
+              <v-tab-item>
+                <DetailsMyProfile></DetailsMyProfile>
+              </v-tab-item>
+              <v-tab-item v-for="(text, i) in texts" :key="`item-${i}`">
                 <v-card flat>
-                  <v-timeline dense reverse v-for="(t, j) in text" :key="j">
+                  <v-timeline dense reverse v-for="(t, j) in text" :key="`timeline-${j}`">
                     <v-timeline-item left class="pb-2">
                       <v-card class="ml-2"  @click="openModal(j)">
                         <v-card-text class="text">{{ t }}</v-card-text>
@@ -64,12 +67,13 @@
           </v-card>
         </v-col>
       </v-row>
-      <Modal :tab="tab" :index="pos" v-show="showcontent" @close="closeModal"></Modal>
+      <ModalWindow :tab="win" :index="pos" v-show="showcontent" @close="closeModal"></ModalWindow>
     </div>
   </v-container>
 </template>
 <script>
-import Modal from "~/components/modal.vue";
+import ModalWindow from "~/components/about/ModalWindow.vue";
+import DetailsMyProfile from "~/components/about/DetailsMyProfile.vue";
 export default {
   head() {
     return {
@@ -78,13 +82,13 @@ export default {
     };
   },
   layout: "default",
-  components: { Modal },
+  components: { ModalWindow, DetailsMyProfile },
   middleware: [],
   data() {
     return {
-      imsrcs: ["/childhood.jpg", "/adolescence.jpg", "/index.jpg"],
+      imsrcs: ["/childhood.jpg", "/childhood.jpg", "/adolescence.jpg", "/index.jpg"],
       tab: 0,
-      items: ["0~9歳", "10~19歳", "20歳~"],
+      items: ["detail", "0~9歳", "10~19歳", "20歳~"],
       texts: [
         [
           "1998年12月26日兵庫県で誕生",
@@ -100,9 +104,11 @@ export default {
           "プログラミングを本格的に勉強開始(現在もまだまだ勉強中)",
           "心機一転、大学から硬式テニスを始める(新たな挑戦)",
           "ソフトテニスとの差に苦しみつつも3年間続けることで、8つのサークル間で開かれる大会でベスト8進出(頑張った！次は目指せベスト4！！)"
-        ]
+        ],
+        [""]
       ],
       showcontent: false,
+      win: 0,
       pos: 0
     };
   },
@@ -121,6 +127,7 @@ export default {
     },
     openModal(index) {
       this.showcontent = true;
+      this.win = this.tab - 1
       this.pos = index
     },
     closeModal() {

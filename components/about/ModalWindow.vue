@@ -7,6 +7,9 @@
           style="width: 100%;"
           :src="imagesrc[tab][index]"
         />
+        <v-card-text>
+          只今画像を準備中です。
+        </v-card-text>
       </v-card>
     </div>
   </div>

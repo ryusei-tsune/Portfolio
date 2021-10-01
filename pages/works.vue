@@ -368,22 +368,22 @@ Portfolioは私自身について少しでも知って頂けたらと思い作�
   mounted() {},
   beforeDestroy() {},
   methods: {
-    openPop(index) {
-      this.select = index;
-      this.onboarding = 0;
-    },
-    next() {
-      this.onboarding =
-        this.onboarding + 1 === this.image[this.select].length
-          ? 0
-          : this.onboarding + 1;
-    },
-    prev() {
-      this.onboarding =
-        this.onboarding - 1 < 0
-          ? this.image[this.select].length - 1
-          : this.onboarding - 1;
-    }
+  //   openPop(index) {
+  //     this.select = index;
+  //     this.onboarding = 0;
+  //   },
+  //   next() {
+  //     this.onboarding =
+  //       this.onboarding + 1 === this.image[this.select].length
+  //         ? 0
+  //         : this.onboarding + 1;
+  //   },
+  //   prev() {
+  //     this.onboarding =
+  //       this.onboarding - 1 < 0
+  //         ? this.image[this.select].length - 1
+  //         : this.onboarding - 1;
+  //   }
   }
 };
 </script>

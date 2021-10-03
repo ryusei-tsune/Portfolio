@@ -88,7 +88,7 @@ export default {
     return {
       imsrcs: ["/childhood.jpg", "/childhood.jpg", "/adolescence.jpg", "/index.jpg"],
       tab: 0,
-      items: ["detail", "0~9歳", "10~19歳", "20歳~"],
+      items: ["Profile", "0~9歳", "10~18歳", "19歳~現在"],
       texts: [
         [
           "1998年12月26日兵庫県で誕生",

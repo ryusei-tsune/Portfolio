@@ -67,7 +67,7 @@
           </v-card>
         </v-col>
       </v-row>
-      <ModalWindow :tab="win" :index="pos" v-show="showcontent" @close="closeModal"></ModalWindow>
+      <ModalWindow :tab="win" :index="pos" v-show="showcontent" @close="closeModal()"></ModalWindow>
     </div>
   </v-container>
 </template>
@@ -86,7 +86,7 @@ export default {
   middleware: [],
   data() {
     return {
-      imsrcs: ["/childhood.jpg", "/childhood.jpg", "/adolescence.jpg", "/index.jpg"],
+      imsrcs: ["/about0.jpg", "/childhood.jpg", "/adolescence.jpg", "/index.jpg"],
       tab: 0,
       items: ["Profile", "0~9歳", "10~18歳", "19歳~現在"],
       texts: [
@@ -98,7 +98,8 @@ export default {
         [
           "兄の影響でソフトテニスを始める",
           "高校卒業までの9年間ソフトテニスに懸ける日々",
-          "小学6年生、中学3年生の時に県大会ベスト16に進出（残念ながら近畿大会への切符は掴めず...）"
+          `小学6年生、中学3年生の時に県大会ベスト16に進出（残念ながら近畿大会への切符は掴めず...）
+しかし高校でチーム皆のおかげで団体戦で近畿大会出場`
         ],
         [
           "プログラミングを本格的に勉強開始(現在もまだまだ勉強中)",

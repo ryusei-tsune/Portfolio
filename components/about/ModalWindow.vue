@@ -4,10 +4,10 @@
       <v-card>
         <img
           class="pt-2 px-2 popBack"
-          style="width: 100%;"
+          style=" height:100%; width:100%; object-fit: contain;"
           :src="imagesrc[tab][index]"
         />
-        <v-card-text>
+        <v-card-text v-if="imagesrc[tab][index] == 'no-image.jpg'">
           只今画像を準備中です。
         </v-card-text>
       </v-card>
@@ -32,8 +32,8 @@ export default {
     return {
       imagesrc: [
         ["no-image.jpg", "no-image.jpg", "no-image.jpg"],
-        ["no-image.jpg", "no-image.jpg", "no-image.jpg"],
-        ["no-image.jpg", "no-image.jpg", "no-image.jpg"]
+        ["about4.jpg", "about5.jpg", "about6.jpg"],
+        ["no-image.jpg", "about8.jpg", "about9.jpg"]
       ]
     };
   },

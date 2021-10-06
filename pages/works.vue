@@ -178,49 +178,7 @@ Portfolioは私自身について少しでも知って頂けたらと思い作�
   beforeMount() {},
   mounted() {},
   beforeDestroy() {},
-  methods: {
-  //   openPop(index) {
-  //     this.select = index;
-  //     this.onboarding = 0;
-  //   },
-  //   next() {
-  //     this.onboarding =
-  //       this.onboarding + 1 === this.image[this.select].length
-  //         ? 0
-  //         : this.onboarding + 1;
-  //   },
-  //   prev() {
-  //     this.onboarding =
-  //       this.onboarding - 1 < 0
-  //         ? this.image[this.select].length - 1
-  //         : this.onboarding - 1;
-  //   }
-  }
+  methods: {}
 };
 </script>
-<style scoped>
-.resizeimage {
-  width: 100%;
-}
-.popColor {
-  background-color: #b3e5fc;
-}
-.itemstr {
-  font-size: 3vmin;
-}
-.contentstr {
-  font-size: 2vmin;
-}
-.title {
-  text-align: right;
-}
-.titlemargin {
-  text-align: left;
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-.smargin {
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-</style>
+<style scoped></style>

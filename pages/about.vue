@@ -57,7 +57,7 @@
                   <v-timeline dense reverse v-for="(t, j) in text" :key="`timeline-${j}`">
                     <v-timeline-item left class="pb-2">
                       <v-card class="ml-2"  @click="openModal(j)">
-                        <v-card-text class="text">{{ t }}</v-card-text>
+                        <v-card-text>{{ t }}</v-card-text>
                       </v-card>
                     </v-timeline-item>
                   </v-timeline>
@@ -98,8 +98,7 @@ export default {
         [
           "兄の影響でソフトテニスを始める",
           "高校卒業までの9年間ソフトテニスに懸ける日々",
-          `小学6年生、中学3年生の時に県大会ベスト16に進出（残念ながら近畿大会への切符は掴めず...）
-しかし高校でチーム皆のおかげで団体戦で近畿大会出場`
+          "小学6年生、中学3年生の時に県大会ベスト16に進出（残念ながら近畿大会への切符は掴めず...）高校ではチーム皆のおかげで団体戦で近畿大会出場"
         ],
         [
           "プログラミングを本格的に勉強開始(現在もまだまだ勉強中)",
@@ -148,8 +147,5 @@ export default {
 }
 .border {
   border-right: 1px solid rgb(105, 105, 105);
-}
-.text {
-  font-size: 2vmin;
 }
 </style>

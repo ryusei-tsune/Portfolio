@@ -26,7 +26,7 @@
       <div class="div-inner-message">
         <div style="display:inline-block;text-align:left;">
           <div class="hobbytext px-2">Anime</div>
-          <div style="color:darkturquoise; font-size: 3vmin;" class="px-4">
+          <div style="color:darkturquoise; font-size: 3vmin; text-shadow:0px 0px 2px black;" class="px-4">
             I've loved anime since I was in elementary school. The first time I got into anime was Fairy Tail. <br>
             Currently, the anime I recommend is Guilty Crown. <br>
             I can't tell you what to look out for or how I feel about it, so please watch it.<br>

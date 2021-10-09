@@ -58,6 +58,15 @@
             </v-card-text>
           </div>
 
+          <v-card-text>
+            <span class="Subtitle">
+              研究
+            </span>
+          </v-card-text>
+          <v-card-text style="font-size:20px;" class="font-weight-bold">
+            ARマーカとSLAMを用いた屋内向けARナビゲーションシステムに関する研究
+          </v-card-text>
+
           <v-card-text class="mb-3">
             <span class="Subtitle">
               Programing Skills
@@ -92,8 +101,8 @@
           <v-row justify="center">
             <v-col cols="12" md="9">
               <v-card>
-                <v-card-title>{{ details[select].name }}</v-card-title>
-                <v-card-text>{{ details[select].comment }}</v-card-text>
+                <v-card-title style="font-size:20px;">{{ details[select].name }}</v-card-title>
+                <v-card-text style="font-size:20px;" >{{ details[select].comment }}</v-card-text>
               </v-card>
             </v-col>
           </v-row>
@@ -128,14 +137,46 @@ export default {
         { language: "Julia", color: "purple", skill: 10 }
       ],
       details: [
-        { name: "C", comment: "大学の授業で使用してきました。一番使い慣れたプログラミング言語です。画像処理や通信を行うプログラムを作成したことがあり、調べながらであれば自分一人で記述が出来るレベルです。" },
-        { name: "C#", comment: "現在研究でUnityと一緒に使用しています。ほぼ毎日触れているので、今一番身近な言語と言えます。まだまだ知識が足りず、日々調べながら学んでいます。" },
-        { name: "HTML5/CSS3", comment: "最近力を入れて学んでいます。思い通りのデザインを作成するのが難しく悪戦苦闘しています。" },
-        { name: "JavaScript", comment: "HTML/CSSと一緒に学んでいます。Webアプリケーションを実際に作成しながら勉強中です。" },
-        { name: "Vue.js", comment: "フロントエンドのフレームワークとして勉強しています。まだまだ使いこなせていないため、もっと利用していこうと思います。" },
-        { name: "Node.js", comment: "GETやPOSTの処理、データベースの利用などで使用してきました。もっとサーバサイドの記述が出来るように勉強していきます。" },
-        { name: "Python", comment: "現在AtCoderに参加する際に使用しています、レートはまだまだ低いです！！また、OpenCV等の画像処理を中心に勉強しています。" },
-        { name: "Julia", comment: "最近勉強し始めました。今後、機械学習を行う際に利用したいと考えています。" }
+        {
+          name: "C",
+          comment:
+            "大学の授業で使用してきました。一番使い慣れたプログラミング言語です。画像処理や通信を行うプログラムを作成したことがあり、調べながらであれば自分一人で記述が出来るレベルです。"
+        },
+        {
+          name: "C#",
+          comment:
+            "現在研究でUnityと一緒に使用しています。ほぼ毎日触れているので、今一番身近な言語と言えます。まだまだ知識が足りず、日々調べながら学んでいます。"
+        },
+        {
+          name: "HTML5/CSS3",
+          comment:
+            "最近力を入れて学んでいます。思い通りのデザインを作成するのが難しく悪戦苦闘しています。"
+        },
+        {
+          name: "JavaScript",
+          comment:
+            "HTML/CSSと一緒に学んでいます。Webアプリケーションを実際に作成しながら勉強中です。"
+        },
+        {
+          name: "Vue.js",
+          comment:
+            "フロントエンドのフレームワークとして勉強しています。まだまだ使いこなせていないため、もっと利用していこうと思います。"
+        },
+        {
+          name: "Node.js",
+          comment:
+            "GETやPOSTの処理、データベースの利用などで使用してきました。もっとサーバサイドの記述が出来るように勉強していきます。"
+        },
+        {
+          name: "Python",
+          comment:
+            "現在AtCoderに参加する際に使用しています、レートはまだまだ低いです！！また、OpenCV等の画像処理を中心に勉強しています。"
+        },
+        {
+          name: "Julia",
+          comment:
+            "最近勉強し始めました。今後、機械学習を行う際に利用したいと考えています。"
+        }
       ],
       select: 0
     };

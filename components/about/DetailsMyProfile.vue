@@ -98,7 +98,7 @@
               </v-col>
             </v-row>
           </div>
-          <v-row justify="center">
+          <v-row justify="center" class="pb-4">
             <v-col cols="12" md="9">
               <v-card>
                 <v-card-title style="font-size:20px;">{{ details[select].name }}</v-card-title>
@@ -106,6 +106,17 @@
               </v-card>
             </v-col>
           </v-row>
+          <v-card-text>
+            <span class="Subtitle">
+              好きな言葉
+            </span>
+          </v-card-text>
+          <v-card-text style="font-size:20px;" class="font-weight-bold pb-0">
+            「オレが知りてーのは楽な道のりじゃねェ　険しい道の歩き方だ」
+          </v-card-text>
+          <v-card-text style="font-size:10px;" class="text-right gray pt-1" >
+            By うずまきナルト「NARUTO-ナルト-　疾風伝　605話より」
+          </v-card-text>
         </div>
       </v-container>
     </v-card>

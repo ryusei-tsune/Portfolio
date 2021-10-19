@@ -108,7 +108,7 @@
           </v-row>
           <v-card-text>
             <span class="Subtitle">
-              好きな言葉
+              好きなセリフ
             </span>
           </v-card-text>
           <v-card-text style="font-size:20px;" class="font-weight-bold pb-0">

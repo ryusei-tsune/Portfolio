@@ -9,7 +9,7 @@
         :key="index"
       >
         <DetailsDialog :title="item.title">
-          <template v-slot:activator="{ on, attrs }">
+          <template v-slot:activate="{ on, attrs }">
             <v-card v-bind="attrs" v-on="on">
               <div class="pa-2">
                 <img :src="item.thumbnail" style="width:100%;" />

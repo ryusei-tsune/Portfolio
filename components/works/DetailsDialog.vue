@@ -1,7 +1,7 @@
 <template>
   <v-dialog v-model="isOpen" :fullscreen="$vuetify.breakpoint.xsOnly">
     <template v-slot:activator="{ on, attrs }">
-      <slot name="activator" v-bind:on="on" v-bind:attrs="attrs"></slot>
+      <slot name="activate" v-bind:on="on" v-bind:attrs="attrs"></slot>
     </template>
     <v-card tile>
       <div class="d-flex align-center">

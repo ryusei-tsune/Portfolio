@@ -37,7 +37,7 @@
     <v-card tile>
       <v-container>
         <div class="d-flex align-center" style="border-bottom: 2px solid aqua;">
-          <v-card-text class="Profile">PLOFILE</v-card-text>
+          <v-card-text class="Profile">PROFILE</v-card-text>
           <v-spacer />
           <v-btn large icon tile @click="isOpen = false">
             <v-icon>mdi-close</v-icon>

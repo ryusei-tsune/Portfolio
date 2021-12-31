@@ -1,7 +1,7 @@
 # Ryusei's Portfolio
 
 ## URL
-![サイト](https://ryusei-portfolio.herokuapp.com/)
+<https://ryusei-portfolio.herokuapp.com/>
 
 # portfolio-nuxt
 
